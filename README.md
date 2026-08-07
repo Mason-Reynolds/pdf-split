@@ -1,35 +1,77 @@
-pdfs.py intellectual property of Mason Reynolds, Clallam PUD District No. 1
 
------------------------------------Requirements--------------------------------
+# PDF Splitter (`pdfs.py`)
 
-You will need Python 3.14.6 or newer. Download Python at:
-    https://www.python.org/downloads/
+**Copyright Mason Reynolds, Clallam PUD District No. 1. All rights reserved.**
 
-You will also need pypdf. To obtain, open Command Prompt (hit Windows, type 
-"cmd" and hit Enter), and in the black box, type "python -m pip install pypdf".
+---
 
--------------------------------------How To------------------------------------
+## Requirements
 
-Step 1. Scan your documents as one big stack, so they're all in one PDF.
+### Python
 
-Step 2. Open the source PDF and place a bookmark at the start of each new 
-document (be sure to remove any blank pages using Organize Pages). Name the 
-bookmark anything, but it's recommended to name the bookmark as follows:
-    1Name of First Document
-    2Name of Second Document
-Therefore they are sorted such that the sequence is the same as the source pdf 
-and the paper stack, and when adding to NeoGov, the only change that needs to 
-be made is removing the number.
+Python **3.14.6 or newer** is required.
 
-Step 3. Save the bookmarked pdf as something distinct from the original.
+Download Python from:
 
-Step 4. Run pdfs.py. You can do this by double-clicking the file, or 
-right-clicking and selecting "Open With..." -> "Python"
+	https://www.python.org/downloads/
 
-Step 5. It will open a black box, and then open a file select prompt. Select 
-your source pdf.
+### pypdf
 
-Step 6. The documents will be split and sent an "output_pdfs" folder in the 
-same directory as the source pdf. If there is already an "output_pdfs" folder, 
-it will be deleted along with anything inside it to make room for the new 
-output folder.
+Install the required package by opening **Command Prompt** and running:
+
+```bash
+python -m pip install pypdf
+```
+---
+
+## Instructions
+
+### 1. Scan Documents
+
+Scan all documents for a single employee into one PDF file.
+
+Before creating bookmarks, remove any blank pages using Adobe Acrobat's **Organize Pages** tool (or another PDF editor).
+
+### 2. Create Bookmarks
+
+Place a bookmark at the beginning of each document.
+
+Bookmarks may be named anything, but it is recommended to prefix each bookmark with a sequential number so the output files remain in the same order as the original PDF and paper file.
+
+Example:
+
+```text
+1Employee Change Form
+2Payroll Adjustment
+3Insurance Enrollment
+```
+
+When uploading the split documents to NeoGov, simply remove the leading number from each filename.
+
+### 3. Save the PDF
+
+Save the bookmarked PDF using a different filename than the original scanned PDF.
+
+### 4. Run the Program
+
+Launch `pdfs.py` by either:
+
+* Double-clicking the file, or
+* Right-clicking the file and selecting **Open With → Python**
+
+### 5. Select the PDF
+
+A file selection window will open.
+
+Browse to and select the bookmarked PDF you created in Step 3.
+
+### 6. Retrieve the Output
+
+The program creates an **output_pdfs** folder in the same directory as the selected PDF.
+
+If an **output_pdfs** folder already exists, it and **all of its contents** will be deleted before new files are created. Be sure to move or back up any files you wish to keep before running the program.
+
+Each bookmarked section of the PDF is exported as a separate PDF using its bookmark name as the filename.
+
+```
+```
